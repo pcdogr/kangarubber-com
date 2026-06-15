@@ -99,7 +99,10 @@ ul { list-style: none; }
   justify-content: space-between;
 }
 
-.header__logo-img { display: block; }
+.header__logo { display: flex; align-items: center; gap: 10px; }
+.header__logo-img { display: block; border-radius: 50%; object-fit: cover; width: 42px; height: 42px; }
+.header__brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: #1c1c1c; }
+.header__brand:hover { color: #c0392b; }
 
 .header__nav-list {
   display: flex;
@@ -505,3 +508,9 @@ ul { list-style: none; }
 
   .footer__grid { grid-template-columns: 1fr; gap: 24px; }
 }
+
+
+/* ── Footer logo ── */
+.footer__logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.footer__logo-img { border-radius: 50%; object-fit: cover; }
+.footer__brand-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #fff; }
