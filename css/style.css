@@ -100,7 +100,7 @@ ul { list-style: none; }
 }
 
 .header__logo { display: flex; align-items: center; gap: 10px; }
-.header__logo-img { display: block; border-radius: 50%; object-fit: cover; width: 42px; height: 42px; }
+.header__logo-img { display: block; height: 56px; width: auto; object-fit: contain; }
 .header__brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: #1c1c1c; }
 .header__brand:hover { color: #c0392b; }
 
@@ -512,5 +512,5 @@ ul { list-style: none; }
 
 /* ── Footer logo ── */
 .footer__logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
-.footer__logo-img { border-radius: 50%; object-fit: cover; }
+.footer__logo-img { height: 64px; width: auto; object-fit: contain; }
 .footer__brand-name { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700; color: #fff; }
