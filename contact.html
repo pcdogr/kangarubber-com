@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Kangarubber</title>
+  <meta name="description" content="Get in touch with Kangarubber. Visit us in Brookvale or send us a message.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="https://static.parastorage.com/client/pfavico.ico">
+  <style>
+    .contact-page { padding: 140px 0 80px; }
+    .contact__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact__info h2 { margin-bottom: 32px; }
+    .contact__detail { margin-bottom: 28px; }
+    .contact__detail h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: #c0392b; margin-bottom: 8px; }
+    .contact__detail p, .contact__detail a { font-size: 16px; color: #555; line-height: 1.8; }
+    .contact__detail a:hover { color: #c0392b; }
+
+    .contact__form { background: #f9f7f5; padding: 40px; border-radius: 16px; }
+    .contact__form h3 { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 600; color: #333; margin-bottom: 6px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      color: #333;
+      transition: border-color 0.2s;
+      background: #fff;
+    }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #c0392b; }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .contact__map { margin-top: 60px; }
+    .contact__map iframe { width: 100%; height: 350px; border-radius: 16px; border: none; }
+
+    @media (max-width: 768px) {
+      .contact__grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact__form { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo">
+        <img src="https://static.wixstatic.com/media/543c8a_677136968aef4bcea8a7b9342494d7c8~mv2.jpg/v1/fill/w_220,h_40,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Kangarubber%2520Logo_edited.jpg"
+             alt="Kangarubber" width="220" height="40" class="header__logo-img">
+      </a>
+      <button class="header__menu-toggle" aria-label="Toggle menu" id="menuToggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="mainNav">
+        <ul class="header__nav-list">
+          <li><a href="index.html#foam" class="header__nav-link">Foam</a></li>
+          <li><a href="index.html#cushion" class="header__nav-link">Cushion</a></li>
+          <li><a href="index.html#cutting" class="header__nav-link">Cutting</a></li>
+          <li><a href="index.html#industry" class="header__nav-link">Industry Solution</a></li>
+          <li><a href="contact.html" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ CONTACT PAGE ═══ -->
+  <section class="contact-page">
+    <div class="container">
+      <div class="contact__grid">
+        
+        <!-- Info -->
+        <div class="contact__info">
+          <h2 class="section__title">Get in Touch</h2>
+          
+          <div class="contact__detail">
+            <h3>Address</h3>
+            <p>2B/106 Old Pittwater Road<br>Brookvale NSW 2100</p>
+          </div>
+
+          <div class="contact__detail">
+            <h3>Phone</h3>
+            <p><a href="tel:+61299398024">+61-2-9939-8024</a></p>
+          </div>
+
+          <div class="contact__detail">
+            <h3>Email</h3>
+            <p><a href="mailto:info@kangarubber.com.au">info@kangarubber.com.au</a></p>
+          </div>
+
+          <div class="contact__detail">
+            <h3>Business Hours</h3>
+            <p>
+              Monday – Friday: 8:00am – 4:00pm<br>
+              Saturday: 10:00am – 4:00pm<br>
+              Sunday &amp; Public Holidays: Closed
+            </p>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact__form">
+          <h3>Send us a Message</h3>
+          <form action="https://formspree.io/f/xkgwljwz" method="POST">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="">Select a topic…</option>
+                <option value="Foam Products">Foam Products</option>
+                <option value="Cushions">Cushions</option>
+                <option value="Cutting Services">Cutting Services</option>
+                <option value="Industrial Packaging">Industrial Packaging</option>
+                <option value="General Enquiry">General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div class="contact__map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.5!2d151.267!3d-33.764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ1JzUwLjQiUyAxNTHCsDE2JzAxLjIiRQ!5e0!3m2!1sen!2sau!4v1"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Kangarubber location on Google Maps"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="https://static.wixstatic.com/media/543c8a_677136968aef4bcea8a7b9342494d7c8~mv2.jpg/v1/fill/w_180,h_33,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Kangarubber%2520Logo_edited.jpg"
+               alt="Kangarubber" width="180" height="33" loading="lazy">
+          <p>Australian manufacturer of custom foam products, soft furnishings, and rubber solutions since 2015.</p>
+        </div>
+        <div class="footer__contact">
+          <h4>Contact</h4>
+          <p>2B/106 Old Pittwater Road<br>Brookvale NSW 2100<br><a href="tel:+61299398024">+61-2-9939-8024</a><br><a href="mailto:info@kangarubber.com.au">info@kangarubber.com.au</a></p>
+        </div>
+        <div class="footer__hours">
+          <h4>Business Hours</h4>
+          <p>Mon–Fri: 8:00am – 4:00pm<br>Saturday: 10:00am – 4:00pm<br>Sunday &amp; P.H.: Closed</p>
+        </div>
+        <div class="footer__links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#industry">Industry Solutions</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>&copy; 2026 Kangarubber. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
