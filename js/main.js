@@ -1,16 +1,16 @@
-/* ── Mobile menu toggle ── */
+// Kangarubber — Main
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ── Mobile menu ──
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
-  
+
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('active');
       nav.classList.toggle('open');
     });
-
-    // Close menu on link click (mobile)
-    nav.querySelectorAll('.header__nav-link').forEach(link => {
+    nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('active');
         nav.classList.remove('open');
@@ -18,18 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Smooth scroll for anchor links ──
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
+  // ── Header scroll effect ──
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 40) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    lastScroll = y;
   });
 
-  // ── Intersection Observer for fade-in ──
+  // ── Intersection Observer: fade-in cards ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -37,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.style.transform = 'translateY(0)';
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.service-card, .industry__item').forEach(el => {
+  document.querySelectorAll('.service-card, .industry__item, .process__step, .intro__stat').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
     observer.observe(el);
   });
 });
